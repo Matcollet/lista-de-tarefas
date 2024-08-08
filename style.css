@@ -1,0 +1,148 @@
+* section {
+  width: 700px;
+  border: 3px solid rgb(31, 0, 0);
+  box-sizing: border-box;
+  border-radius: 25px;
+  display: grid;
+  place-items: center;
+  padding: 70px;
+  background: rgb(83, 1, 90);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./stars-1837306_1280.jpg); /* Caminho para a imagem de fundo */
+  background-size: cover; /* Ajusta o tamanho da imagem para cobrir o elemento */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  
+}
+
+main {
+  flex: auto;
+  padding: 10px;
+  background: rgb(44, 44, 44);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 30px;
+  max-height: 200px;
+  max-width: 400px;
+  overflow: auto;
+}
+
+main li {
+  padding: 2px;
+  color: rgb(255, 255, 255);
+  text-shadow: 3px 0 #000000;
+  border: 2px solid black;
+  background-color: rgba(20, 20, 20, 0.5);
+  border-radius: 5px;
+  font-style: italic;
+  margin-right: 35px;
+}
+
+footer {
+  flex: auto;
+}
+
+footer input {
+  flex: auto;
+  padding: 5px;
+}
+
+h1 {
+  font-style: italic;
+  font-size: 30px;
+  padding: 10px;
+  text-shadow: -1px 0 #280049, -1px 0 #ffffff;
+  color: aliceblue;
+  animation: rgbglow 1.0s infinite;
+}
+
+input {
+  padding: 3px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+li {
+  font-style: rgb(0, 132, 255);
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: circle;
+}
+
+button {
+  padding: 6px;
+  display: flex;
+  place-items: center;
+  margin-left: 47px;
+}
+
+button:hover {
+  animation: aumentador 0.5s forwards;
+}
+
+button:not(:hover) {
+  animation: diminuidor 0.5s forwards;
+}
+
+#deletebtn {
+  margin-left: 10px;
+}
+
+@keyframes aumentador {
+  0% {
+    transform: scale(1.0);
+  }
+  25% {
+    transform: scale(1.05)
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.11);
+  }
+}
+
+@keyframes diminuidor {
+  0% {
+    transform: scale(1.11);
+  }
+  25% {
+    transform: scale(1.07);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes rgbglow {
+  0% {
+    color: rgb(0, 247, 255);
+  }
+  25% {
+    color: rgb(0, 89, 255);
+  }
+  50% {
+    color: rgb(204, 0, 255);
+  }
+  75% {
+    color: rgb(255, 0, 149);
+  }
+  100% {
+    color: rgb(0, 247, 255)
+  }
+}

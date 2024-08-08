@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativar Botão com Tecla</title>
+    <script>
+        document.addEventListener('keydown', function(event) {
+            // Verifica se a tecla pressionada é a tecla 'Enter' (código 13)
+            if (event.keyCode === 13) {
+                // Ativa o botão ao pressionar a tecla 'Enter'
+                document.getElementById('meuBotao').click();
+            }
+        });
+
+        function acaoDoBotao() {
+            alert('Botão ativado!');
+        }
+    </script>
+</head>
+<body>
+    <button id="meuBotao" onclick="acaoDoBotao()">Clique-me</button>
+</body>
+</html>

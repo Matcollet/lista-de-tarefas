@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input com Placeholder</title>
+    <style>
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            color: #ccc;
+        }
+
+        input[type="text"].active {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputField" value="Digite algo aqui..." />
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputField = document.getElementById('inputField');
+
+            inputField.addEventListener('focus', function() {
+                if (this.value === 'Digite algo aqui...') {
+                    this.value = '';
+                    this.classList.add('active');
+                }
+            });
+
+            inputField.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.value = 'Digite algo aqui...';
+                    this.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
