@@ -3,8 +3,10 @@
   border: 3px solid rgb(31, 0, 0);
   box-sizing: border-box;
   border-radius: 25px;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 70px;
   background: rgb(83, 1, 90);
 }
@@ -43,6 +45,11 @@ main li {
   border-radius: 5px;
   font-style: italic;
   margin-right: 35px;
+  list-style: circle;
+}
+
+ul {
+  max-width: 200px; /* Define uma largura máxima para a lista, ajustável */
 }
 
 footer {
@@ -77,7 +84,6 @@ li {
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  list-style: circle;
 }
 
 button {
