@@ -46,10 +46,11 @@ main li {
   font-style: italic;
   margin-right: 35px;
   list-style: circle;
-  max-width: 100%;
-  white-space: normal;
-  word-wrap: break-word;
-  word-break: break-all;
+  width: 80%;
+  word-wrap: break-word; /* Permite a quebra de palavras longas */
+  overflow-wrap: break-word; /* Quebra palavras longas para caber na linha */
+  white-space: normal; /* Permite quebras de linha dentro do contêiner */
+  overflow: hidden; /* Esconde o conteúdo que ultrapassa o contêiner */
 }
 
 ul {
