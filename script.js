@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         this.value = '';
         this.classList.add('active');
       }
+      saveTasks();
     });
 
     inputField.addEventListener('blur', function() {
@@ -13,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
         this.value = 'Sua tarefa aqui...';
         this.classList.remove('active');
       }
+      saveTasks();
     });
 
     // Estado da minha aplicação
     const tarefas = ['Suas tarefas aparecerão aqui!!'];
-
     function addtarefa() {
       const input = document.getElementById('inputField');
       const tarefa = input.value.trim(); // Remove espaços em branco extras
@@ -69,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Remove todas as tarefas
       tarefas.length = 0;
       render();
+      saveTasks();
     }
 
     document.getElementById('meuBotao').addEventListener('click', addtarefa);
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (event.key === 'Enter') {
         document.getElementById('meuBotao').click();
       }
+      saveTasks();
     });
 
     // Iniciar
@@ -111,4 +114,5 @@ function addTaskToDOM(taskText, completed = false) {
     span.className = "task-text";
     span.textContent = taskText;
     li.appendChild(span);
+    saveTasks();
 }
