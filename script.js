@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (this.value === 'Sua tarefa aqui...') {
         this.value = '';
         this.classList.add('active');
+        saveTasks();
       }
-      saveTasks();
     });
 
     inputField.addEventListener('blur', function() {
       if (this.value === '') {
         this.value = 'Sua tarefa aqui...';
         this.classList.remove('active');
+        saveTasks();
       }
-      saveTasks();
     });
 
     // Estado da minha aplicação
@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       tarefas.push(tarefa);
+      saveTasks();
       render();
       input.value = '';
     }
@@ -36,13 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     function render() {
       const ul = document.querySelector('ul');
       ul.innerHTML = '';
+      saveTasks();
 
       tarefas.forEach((tarefa, index) => {
         const li = document.createElement('li');
+        saveTasks();
         
         // Cria o texto da tarefa
         const taskText = document.createElement('span');
         taskText.innerText = tarefa;
+        saveTasks();
 
         // Cria o botão de delete
         const deleteButton = document.createElement('button');
@@ -63,14 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function deleteTask(index) {
       tarefas.splice(index, 1); // Remove a tarefa do array
+      saveTasks();
       render(); // Atualiza a lista de tarefas
     }
 
     function deletetarefa() {
       // Remove todas as tarefas
       tarefas.length = 0;
-      render();
       saveTasks();
+      render();
     }
 
     document.getElementById('meuBotao').addEventListener('click', addtarefa);
