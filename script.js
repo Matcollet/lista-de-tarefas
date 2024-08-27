@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const inputField = document.getElementById('inputField');
+    saveTasks();
 
     inputField.addEventListener('focus', function() {
       if (this.value === 'Sua tarefa aqui...') {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function addtarefa() {
       const input = document.getElementById('inputField');
       const tarefa = input.value.trim(); // Remove espaços em branco extras
+      saveTasks();
 
       if (input.value === '' || input.value === 'Sua tarefa aqui...') {
         return; // Se o input estiver vazio ou com o texto padrão, não faz nada
@@ -79,15 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('meuBotao').addEventListener('click', addtarefa);
+    saveTasks();
 
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Enter') {
         document.getElementById('meuBotao').click();
+        saveTasks();
       }
-      saveTasks();
     });
 
     // Iniciar
+    saveTasks();
     render();
   });
 
@@ -120,4 +124,7 @@ function addTaskToDOM(taskText, completed = false) {
     span.textContent = taskText;
     li.appendChild(span);
     saveTasks();
+    localStorage.setItem("test", "working");
+console.log(localStorage.getItem("test"));
+
 }
